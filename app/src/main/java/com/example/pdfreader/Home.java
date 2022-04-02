@@ -3,6 +3,7 @@ package com.example.pdfreader;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
@@ -16,6 +17,7 @@ public class Home extends AppCompatActivity implements OnPageChangeListener, OnL
 
     private int pageNumber = 0;
     private PDFView pdfView;
+    int orientation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,17 +26,20 @@ public class Home extends AppCompatActivity implements OnPageChangeListener, OnL
         setContentView(R.layout.activity_home);
 
         pdfView = (PDFView) findViewById(R.id.pdfView);
+        orientation = getResources().getConfiguration().orientation;
 
         pdfView.fromAsset("test.pdf")
                 .defaultPage(pageNumber)
+                .fitEachPage(true)
+                .autoSpacing(true)
                 .onPageChange(this)
                 .onLoad(this)
                 .enableAnnotationRendering(true)
                 .scrollHandle(new DefaultScrollHandle(this))
                 .spacing(10) // in dp
                 .pageFitPolicy(FitPolicy.WIDTH)
-//                .pageSnap(true)
-//                .pageFling(true)
+                .pageSnap(true)
+                .pageFling(true)
                 .load();
 
 //        pdfView.fromAsset("test.pdf")
@@ -99,5 +104,7 @@ public class Home extends AppCompatActivity implements OnPageChangeListener, OnL
     public void loadComplete(int nbPages) {
 //        System.out.println("pageNumber" + pageNumber);
         pdfView.jumpTo(pageNumber, true);
+        pdfView.setMinZoom((float) 0.4);
+
     }
 }
