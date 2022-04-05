@@ -156,7 +156,7 @@ public class Home extends AppCompatActivity implements OnPageChangeListener, OnL
                         // an ad is loaded.
                         Home.this.interstitialAd = interstitialAd;
                         Log.i(TAG, "onAdLoaded");
-                        Toast.makeText(Home.this, "onAdLoaded()", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(Home.this, "onAdLoaded()", Toast.LENGTH_SHORT).show();
                         interstitialAd.setFullScreenContentCallback(
                                 new FullScreenContentCallback() {
                                     @Override
@@ -195,9 +195,9 @@ public class Home extends AppCompatActivity implements OnPageChangeListener, OnL
                                 String.format(
                                         "domain: %s, code: %d, message: %s",
                                         loadAdError.getDomain(), loadAdError.getCode(), loadAdError.getMessage());
-                        Toast.makeText(
-                                Home.this, "onAdFailedToLoad() with error: " + error, Toast.LENGTH_SHORT)
-                                .show();
+//                        Toast.makeText(
+//                                Home.this, "onAdFailedToLoad() with error: " + error, Toast.LENGTH_SHORT)
+//                                .show();
                     }
                 });
     }
