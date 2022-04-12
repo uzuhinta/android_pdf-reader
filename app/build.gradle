@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('/home/uzumaki/Desktop/Temp/PdfReader/key/key.jks')
+            storePassword 'Naruto017'
+            keyAlias 'key-quan'
+            keyPassword 'Naruto017'
+        }
+    }
     compileSdk 32
 
     defaultConfig {
