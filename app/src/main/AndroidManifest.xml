@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
         <activity
-            android:name=".Home"
+            android:name="com.ecodev.pdfreader.Home"
             android:exported="false"
             android:label="Home"/>
         <activity
-            android:name=".MainActivity"
+            android:name="com.ecodev.pdfreader.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

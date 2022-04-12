@@ -1,14 +1,13 @@
-package com.example.pdfreader;
+package com.ecodev.pdfreader;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.view.Window;
-import android.view.WindowManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
-import com.github.barteksc.pdfviewer.util.FitPolicy;
+
+import com.example.pdfreader.R;
 
 public class MainActivity extends AppCompatActivity {
 
